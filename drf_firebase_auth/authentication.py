@@ -179,7 +179,6 @@ class FirebaseAuthentication(BaseFirebaseAuthentication):
                     'User is not registered to the application.'
                 )
             username = str(uuid.uuid4())
-            username = username if len(username) <= 30 else username[:30]
             new_user = User.objects.create_user(
                 username=username,
                 email=email
