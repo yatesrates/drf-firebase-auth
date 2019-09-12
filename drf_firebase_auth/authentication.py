@@ -185,7 +185,7 @@ class FirebaseAuthentication(BaseFirebaseAuthentication):
             )
             new_user.last_login = timezone.now()
             if api_settings.FIREBASE_ATTEMPT_CREATE_WITH_DISPLAY_NAME:
-                display_name = firebase_user.display_name.split()
+                display_name = firebase_user.display_name.split('+++')
                 if len(display_name) == 2:
                     new_user.first_name = display_name[0]
                     new_user.last_name = display_name[1]
